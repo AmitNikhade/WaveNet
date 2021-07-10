@@ -1,3 +1,5 @@
+#train
+
 from future import *
 from model import model
 from utils import preprocess
@@ -106,7 +108,7 @@ for training_filename in tqdm.tqdm(randomized_files):
 
 training_data = np.array(training_data)
 training_audio_length = len(training_data)
-np.save('data/training_data', training_data)
+np.save('src/data/training_data', training_data)
 logger.info('preprocessing..')
 training_data = preprocess.preprocess(training_data, p.bs, p.fsz, p.fs)
 logger.info('**training started**')
