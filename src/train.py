@@ -124,5 +124,5 @@ model.fit(training_data,
               epochs=p.epochs,
               steps_per_epoch=training_audio_length // 128,
               verbose=1,callbacks=[earlystopping_callback, tensorboard_callback])
-model.save('.trained_model/modelWN.h5')
+model.save('src/trained_model/modelWN.h5')
 logger.info("model saved in model/n Training finished successfully")
