@@ -58,7 +58,7 @@ def generate_audio(model, sr, frame_size, no_files, generated_seconds, training_
 model = keras.models.load_model(p.mp)
 def save_audio():  
     logger.info("Generating Audio.")
-    gen_audio, training_audio, i = generate_audio(model, p.sr, p.fsz, p.ns, p.nfls, np.load('training_data'))
+    gen_audio, training_audio, i = generate_audio(model, p.sr, p.fsz, p.ns, p.nfls, np.load('training_data.npy'))
     wavname = ( "_sample_1" + str(i) + '.wav')
     outputPath = 'generated'+'/'+ wavname
     logger.info("Saving File to " + outputPath)
