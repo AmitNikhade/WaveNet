@@ -60,7 +60,7 @@ def save_audio():
     logger.info("Generating Audio.")
     gen_audio, training_audio, i = generate_audio(model, p.sr, p.fsz, p.ns, p.nfls, np.load('training_data.npy'))
     wavname = ( "_sample_1" + str(i) + '.wav')
-    outputPath = 'generated'+'/'+ wavname
+    outputPath = 'src/generated'+'/'+ wavname
     logger.info("Saving File to " + outputPath)
     write(outputPath, p.sr, gen_audio.astype(np.int16))
     logger.info("Generating Audio.")
