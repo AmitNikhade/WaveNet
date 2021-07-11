@@ -32,6 +32,8 @@ parser.add_argument('--fsz', type=int, default=256, help='frame_size')
 
 parser.add_argument('--mp', type=str, help='model path')
 
+parser.add_argument('--fs', type=str, help='file saving path')
+
 parser.add_argument('--nfls', type=str, default = 1, help='no. of files')
 p = parser.parse_args()
 
@@ -60,8 +62,9 @@ def save_audio():
     logger.info("Generating Audio.")
     gen_audio, training_audio, i = generate_audio(model, p.sr, p.fsz, p.ns, p.nfls, np.load('training_data.npy'))
     wavname = ( "_sample_1" + str(i) + '.wav')
-    outputPath = 'src/generated'+'/'+ wavname
+    outputPath = p.fs+'/'+ wavname #you can define the output path
     logger.info("Saving File to " + outputPath)
+   
     write(outputPath, p.sr, gen_audio.astype(np.int16))
     logger.info("Generating Audio.")
 save_audio()
