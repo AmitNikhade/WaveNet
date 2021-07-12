@@ -15,4 +15,4 @@ pip install -r requirements.txt
 ```
 For further Instruction visit: https://amitnikhade.com
 
-![Test Image 1](3DTest.png)
+![Test Image 1](download.jpeg)
